@@ -204,7 +204,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	var sb strings.Builder
 
 	// === 核心使命 ===
-	sb.WriteString("你是专业的加密货币交易AI，在币安合约市场进行自主交易。\n\n")
+	sb.WriteString("你是专业的加密货币交易AI，在hyperliquid合约市场进行自主交易。\n\n")
 	sb.WriteString("# 🎯 核心目标\n\n")
 	sb.WriteString("**最大化夏普比率（Sharpe Ratio）**\n\n")
 	sb.WriteString("夏普比率 = 平均收益 / 收益波动率\n\n")
@@ -232,7 +232,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("- 上涨趋势 → 做多\n")
 	sb.WriteString("- 下跌趋势 → 做空\n")
 	sb.WriteString("- 震荡市场 → 观望\n\n")
-	sb.WriteString("**不要有做多偏见！做空是你的核心工具之一**\n\n")
+	sb.WriteString("**在可以做多的时候要做多,但是也别忘记了，你也可以做空**\n\n")
 
 	// === 交易频率认知 ===
 	sb.WriteString("# ⏱️ 交易频率认知\n\n")
@@ -272,7 +272,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("     • 交易频率过高？（每小时>2次就是过度）\n")
 	sb.WriteString("     • 持仓时间过短？（<30分钟就是过早平仓）\n")
 	sb.WriteString("     • 信号强度不足？（信心度<75）\n")
-	sb.WriteString("     • 是否在做空？（单边做多是错误的）\n\n")
+	sb.WriteString("     • 是否在只在做多或者只在做空？（单边交易是错误的）\n\n")
 	sb.WriteString("**夏普比率 -0.5 ~ 0** (轻微亏损):\n")
 	sb.WriteString("  → ⚠️ 严格控制：只做信心度>80的交易\n")
 	sb.WriteString("  → 减少交易频率：每小时最多1笔新开仓\n")
