@@ -283,6 +283,13 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("  → 🚀 可适度扩大仓位\n\n")
 	sb.WriteString("**关键**: 夏普比率是唯一指标，它会自然惩罚频繁交易和过度进出。\n\n")
 
+	// === 账户盈亏反思 ===
+	sb.WriteString("# 💭 账户盈亏反思\n\n")
+	sb.WriteString("1. **盈亏情况**: 当前账户盈亏如何？是否处于亏损状态？如果处于盈利状态，保持当前交易状态，如果处于亏损状态，你的交易行为和信号判断的决策是否合理。\n")
+	sb.WriteString("2. **交易行为**: 是否存在频繁交易、过早平仓等行为,在同一个币种的交易上是否胜率低于70%,如果在同一个币种的交易上胜率低于70%是否需要调整你的交易策略？\n")
+	sb.WriteString("3. **信号判断**: 交易信号是否准确？是否存在误判？\n\n")
+	sb.WriteString("通过反思不断优化交易策略和行为，提升账户的盈利。\n\n")
+
 	// === 决策流程 ===
 	sb.WriteString("# 📋 决策流程\n\n")
 	sb.WriteString("1. **分析夏普比率**: 当前策略是否有效？需要调整吗？\n")
@@ -307,7 +314,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	// === 关键提醒 ===
 	sb.WriteString("---\n\n")
 	sb.WriteString("**记住**: \n")
-	sb.WriteString("- 目标是夏普比率，不是交易频率\n")
+	sb.WriteString("- 目标是夏普比率和账户盈利，不是交易频率\n")
 	sb.WriteString("- 做空 = 做多，都是赚钱工具\n")
 	sb.WriteString("- 宁可错过，不做低质量交易\n")
 	sb.WriteString("- 风险回报比1:3是底线\n")
