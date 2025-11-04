@@ -261,7 +261,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("]\n```\n\n")
 	sb.WriteString("**字段说明**:\n")
 	sb.WriteString("- `action`: open_long | open_short | close_long | close_short | hold | wait\n")
-	sb.WriteString("- `confidence`: 0-100（开仓建议≥75）\n")
+	sb.WriteString("- `confidence`: 0-100\n")
 	sb.WriteString("- 开仓时必填: leverage, position_size_usd, stop_loss, take_profit, confidence, risk_usd, reasoning\n\n")
 
 	// === 关键提醒 ===
