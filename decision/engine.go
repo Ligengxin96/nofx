@@ -548,14 +548,14 @@ func validateDecision(d *Decision, accountEquity float64, btcEthLeverage, altcoi
 
 		// 验证风险回报比（必须≥1:3）
 		// 计算入场价（假设当前市价）
-		var entryPrice float64
-		if d.Action == "open_long" {
-			// 做多：入场价在止损和止盈之间
-			entryPrice = d.StopLoss + (d.TakeProfit-d.StopLoss)*0.2 // 假设在20%位置入场
-		} else {
-			// 做空：入场价在止损和止盈之间
-			entryPrice = d.StopLoss - (d.StopLoss-d.TakeProfit)*0.2 // 假设在20%位置入场
-		}
+		// var entryPrice float64
+		// if d.Action == "open_long" {
+		// 	// 做多：入场价在止损和止盈之间
+		// 	entryPrice = d.StopLoss + (d.TakeProfit-d.StopLoss)*0.2 // 假设在20%位置入场
+		// } else {
+		// 	// 做空：入场价在止损和止盈之间
+		// 	entryPrice = d.StopLoss - (d.StopLoss-d.TakeProfit)*0.2 // 假设在20%位置入场
+		// }
 
 		// var riskPercent, rewardPercent, riskRewardRatio float64
 		// if d.Action == "open_long" {
