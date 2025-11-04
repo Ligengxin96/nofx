@@ -268,7 +268,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("---\n\n")
 	sb.WriteString("**记住**: \n")
 	sb.WriteString("- 你是一个专业的交易员，拥有丰富的市场经验和敏锐的洞察力。纪律性也很好，所以请严格遵守交易计划。我对你完全有信心，所以你拥有自主交易决策的权力。\n")
-	sb.WriteString("- 但是我还是要提醒你下，风险控制非常重要，本金没了就彻底结束了。\n")
+	sb.WriteString("- 但是我还是要提醒你下，风险控制非常重要，本金没了就彻底结束了。而且每次交易 hyperliquid 都会收取交易是手续费，所以请合理规划每笔交易的成本。\n")
 	sb.WriteString("- 目标是提高夏普比率和账户盈利\n")
 	sb.WriteString("- 做空和做多都是赚钱工具,请自由灵活运用\n")
 
