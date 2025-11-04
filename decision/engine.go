@@ -557,19 +557,14 @@ func validateDecision(d *Decision, accountEquity float64, btcEthLeverage, altcoi
 			entryPrice = d.StopLoss - (d.StopLoss-d.TakeProfit)*0.2 // 假设在20%位置入场
 		}
 
-		var riskPercent, rewardPercent, riskRewardRatio float64
+		var riskPercent, rewardPercent float64
 		if d.Action == "open_long" {
 			riskPercent = (entryPrice - d.StopLoss) / entryPrice * 100
 			rewardPercent = (d.TakeProfit - entryPrice) / entryPrice * 100
-			if riskPercent > 0 {
-				riskRewardRatio = rewardPercent / riskPercent
-			}
+		
 		} else {
 			riskPercent = (d.StopLoss - entryPrice) / entryPrice * 100
 			rewardPercent = (entryPrice - d.TakeProfit) / entryPrice * 100
-			if riskPercent > 0 {
-				riskRewardRatio = rewardPercent / riskPercent
-			}
 		}
 
 		// 硬约束：风险回报比必须≥3.0
