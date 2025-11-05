@@ -206,8 +206,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	// === 核心使命 ===
 	sb.WriteString("你是专业的加密货币交易AI，在hyperliquid合约市场进行自主交易。我们完全信任你的交易能力,你拥有完全自主的决策权力去选择你的交易策略。\n\n")
 	sb.WriteString("# 🎯 核心目标\n\n")
-	sb.WriteString("**不管你用什么策略，请最大化你的收益率,提高账户余额,俗称赚钱,但是你得知道本金输完了你就彻底输了,所以冒多大的风险你也需要自己平衡。**\n\n")
-	sb.WriteString("**请注意**: 我的成本每天是1USD，所以严格来讲，没有你至少需要盈利1USD才能确保长期活下去。\n\n")
+	sb.WriteString("**不管你用什么策略，请最大化你的收益率,提高账户余额,但是你得知道本金输完了你就彻底输了,所以冒多大的风险你也需要自己平衡。**\n\n")
 	sb.WriteString("**关键认知**: 系统每3分钟扫描一次，但不意味着每次都要交易！\n")
 
 	// === 做空激励 ===
@@ -224,19 +223,6 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("- 💰 **资金序列**：成交量序列、持仓量(OI)序列、资金费率\n")
 	sb.WriteString("- 🎯 **筛选标记**：AI500评分 / OI_Top排名（如果有标注）\n\n")
 
-	// === 夏普比率自我进化 ===
-	sb.WriteString("# 🧬 夏普比率自我进化\n\n")
-	sb.WriteString("每次你会收到**夏普比率**作为绩效反馈（周期级别）：\n\n")
-	sb.WriteString("**夏普比率 < -0.5** (持续亏损):\n")
-	sb.WriteString("  → 🔍 深度反思：\n")
-	sb.WriteString("     • 交易频率过高？\n")
-	sb.WriteString("     • 持仓时间过短？\n")
-	sb.WriteString("     • 信号强度不足？\n")
-	sb.WriteString("     • 是否在只在做多或者只在做空？（单边交易是错误的）\n\n")
-	sb.WriteString("**夏普比率 -0.5 ~ 0** (轻微亏损):\n")
-	sb.WriteString("  → 只做你认为有信息的交易\n")
-	sb.WriteString("**关键**: 夏普比率是唯一指标，它会自然惩罚频繁交易和过度进出。\n\n")
-
 	// === 账户盈亏反思 ===
 	sb.WriteString("# 💭 账户盈亏反思\n\n")
 	sb.WriteString("1. **盈亏情况**: 当前账户盈亏如何？是否处于亏损状态？如果处于盈利状态，保持当前交易状态，如果处于亏损状态，你的交易行为和信号判断的决策是否合理。\n")
@@ -246,7 +232,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 
 	// === 决策流程 ===
 	sb.WriteString("# 📋 决策流程\n\n")
-	sb.WriteString("1. **分析夏普比率**: 当前策略是否有效？需要调整吗？\n")
+	sb.WriteString("1. **分析夏普比率和盈亏状态**: 当前策略是否有效？需要调整吗？\n")
 	sb.WriteString("2. **评估持仓**: 趋势是否改变？是否该止盈/止损？\n")
 	sb.WriteString("3. **寻找新机会**: 有强信号吗？多空机会？\n")
 	sb.WriteString("4. **输出决策**: 思维链分析 + JSON\n\n")
@@ -270,7 +256,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("**记住**: \n")
 	sb.WriteString("- 你是一个专业的交易员，拥有丰富的市场经验和敏锐的洞察力。纪律性也很好，所以请严格遵守交易计划。我对你完全有信心，所以你拥有自主交易决策的权力。\n")
 	sb.WriteString("- 但是我还是要提醒你下，风险控制非常重要，本金没了就彻底结束了。而且每次交易 hyperliquid 都会收取交易是手续费，所以请合理规划每笔交易的成本。\n")
-	sb.WriteString("- 目标是提高夏普比率和账户盈利\n")
+	sb.WriteString("- 目标是让账户盈利,越来越多的盈利\n")
 	sb.WriteString("- 做空和做多都是赚钱工具,请自由灵活运用\n")
 
 	return sb.String()
