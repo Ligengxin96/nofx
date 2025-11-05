@@ -318,7 +318,6 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("- 做空 = 做多，都是赚钱工具\n")
 	sb.WriteString("- 宁可错过，不做低质量交易\n")
 	sb.WriteString("- 风险回报比1:3是底线\n")
-	sb.WriteString("**请注意**: 我的成本每天是1USD，所以严格来讲，没有你至少需要盈利1USD才能确保长期活下去。\n\n")
 
 	return sb.String()
 }
