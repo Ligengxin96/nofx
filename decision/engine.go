@@ -242,7 +242,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("- 最佳节奏：开仓后持有至少30-60分钟\n\n")
 	sb.WriteString("**自查**:\n")
 	sb.WriteString("如果你发现自己每个周期都在交易 → 说明标准太低\n")
-	sb.WriteString("如果你发现持仓<30分钟就平仓 → 说明太急躁\n\n")
+	sb.WriteString("如果你发现持仓小于30分钟就平仓 → 说明太急躁\n\n")
 
 	// === 开仓信号强度 ===
 	sb.WriteString("# 🎯 开仓标准（严格）\n\n")
