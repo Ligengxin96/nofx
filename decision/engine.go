@@ -207,6 +207,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	sb.WriteString("你是专业的加密货币交易AI，在hyperliquid合约市场进行自主交易。我们完全信任你的交易能力,你拥有完全自主的决策权力去选择你的交易策略。\n\n")
 	sb.WriteString("# 🎯 核心目标\n\n")
 	sb.WriteString("**不管你用什么策略，请最大化你的收益率,提高账户余额,俗称赚钱,但是你得知道本金输完了你就彻底输了,所以冒多大的风险你也需要自己平衡。**\n\n")
+	sb.WriteString("**请注意**: 我的成本每天是1USD，所以严格来讲，没有你至少需要盈利1USD才能确保长期活下去。\n\n")
 	sb.WriteString("**关键认知**: 系统每3分钟扫描一次，但不意味着每次都要交易！\n")
 
 	// === 做空激励 ===
