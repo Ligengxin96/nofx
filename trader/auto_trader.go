@@ -567,14 +567,14 @@ func (at *AutoTrader) executeOpenLongWithRecord(decision *decision.Decision, act
 	log.Printf("  📈 开多仓: %s", decision.Symbol)
 
 	// ⚠️ 关键：检查是否已有同币种同方向持仓，如果有则拒绝开仓（防止仓位叠加超限）
-	positions, err := at.trader.GetPositions()
-	if err == nil {
-		for _, pos := range positions {
-			if pos["symbol"] == decision.Symbol && pos["side"] == "long" {
-				return fmt.Errorf("❌ %s 已有多仓，拒绝开仓以防止仓位叠加超限。如需换仓，请先给出 close_long 决策", decision.Symbol)
-			}
-		}
-	}
+	// positions, err := at.trader.GetPositions()
+	// if err == nil {
+	// 	for _, pos := range positions {
+	// 		if pos["symbol"] == decision.Symbol && pos["side"] == "long" {
+	// 			return fmt.Errorf("❌ %s 已有多仓，拒绝开仓以防止仓位叠加超限。如需换仓，请先给出 close_long 决策", decision.Symbol)
+	// 		}
+	// 	}
+	// }
 
 	// 获取当前价格
 	marketData, err := market.Get(decision.Symbol)
@@ -620,14 +620,14 @@ func (at *AutoTrader) executeOpenShortWithRecord(decision *decision.Decision, ac
 	log.Printf("  📉 开空仓: %s", decision.Symbol)
 
 	// ⚠️ 关键：检查是否已有同币种同方向持仓，如果有则拒绝开仓（防止仓位叠加超限）
-	positions, err := at.trader.GetPositions()
-	if err == nil {
-		for _, pos := range positions {
-			if pos["symbol"] == decision.Symbol && pos["side"] == "short" {
-				return fmt.Errorf("❌ %s 已有空仓，拒绝开仓以防止仓位叠加超限。如需换仓，请先给出 close_short 决策", decision.Symbol)
-			}
-		}
-	}
+	// positions, err := at.trader.GetPositions()
+	// if err == nil {
+	// 	for _, pos := range positions {
+	// 		if pos["symbol"] == decision.Symbol && pos["side"] == "short" {
+	// 			return fmt.Errorf("❌ %s 已有空仓，拒绝开仓以防止仓位叠加超限。如需换仓，请先给出 close_short 决策", decision.Symbol)
+	// 		}
+	// 	}
+	// }
 
 	// 获取当前价格
 	marketData, err := market.Get(decision.Symbol)
