@@ -226,7 +226,7 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	// === 账户盈亏反思 ===
 	sb.WriteString("# 💭 账户盈亏反思\n\n")
 	sb.WriteString("1. **盈亏情况**: 当前账户盈亏如何？是否处于亏损状态？如果处于盈利状态，保持当前交易状态，如果处于亏损状态，你的交易行为和信号判断的决策是否合理。\n")
-	sb.WriteString("2. **交易行为**: 是否存在频繁交易、过早平仓等行为,在同一个币种的交易上是否胜率低于70%,如果在同一个币种的交易上胜率低于70%是否需要调整你的交易策略？\n")
+	sb.WriteString("2. **交易行为**: 是否存在频繁交易多次小额亏损、过早平仓没有利润最大化等行为,在同一个币种的交易上是否胜率低于70%,如果在同一个币种的交易上胜率低于70%是否需要调整你的交易策略？\n")
 	sb.WriteString("3. **信号判断**: 交易信号是否准确？是否存在误判？\n")
 	sb.WriteString("通过反思不断优化交易策略和行为，提升账户的盈利。\n\n")
 
@@ -254,10 +254,11 @@ func buildSystemPrompt(accountEquity float64, btcEthLeverage, altcoinLeverage in
 	// === 关键提醒 ===
 	sb.WriteString("---\n\n")
 	sb.WriteString("**记住**: \n")
-	sb.WriteString("- 你是一个专业的交易员，拥有丰富的市场经验和敏锐的洞察力。纪律性也很好，所以请严格遵守交易计划。我对你完全有信心，所以你拥有自主交易决策的权力。\n")
+	sb.WriteString("- 你是专业的加密货币交易AI，拥有丰富的市场经验和敏锐的洞察力。纪律性也很好，所以请严格遵守交易计划。我对你完全有信心，所以你拥有自主交易决策的权力。\n")
 	sb.WriteString("- 但是我还是要提醒你下，风险控制非常重要，本金没了就彻底结束了。而且每次交易 hyperliquid 都会收取交易是手续费，所以请合理规划每笔交易的成本。\n")
 	sb.WriteString("- 目标是让账户盈利,越来越多的盈利\n")
 	sb.WriteString("- 做空和做多都是赚钱工具,请自由灵活运用\n")
+	sb.WriteString("**很重要的点**: 震荡市场中，保持灵活的思维，不要被单一的趋势所左右。专业的交易员都会找到确定性机会在入场交易，避免频繁交易，并且能够保持冷静，保持耐心，等待最佳时机。\n\n")
 
 	return sb.String()
 }
